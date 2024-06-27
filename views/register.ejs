@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login Panel</title>
+    <link rel="stylesheet" href="css/common.css">
+
+    <%- include('admin/links') %>
+
+    <link rel="icon" href="images/logo.jpg">
+
+    <style>
+        div.login-form{
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            text-align: center;
+            width: 400px;
+        }
+        .custom-bg{
+            color:white;
+            background-color:mediumturquoise;
+        }
+        .custom-bg:hover{
+            background-color:mediumturquoise;
+            opacity: 80%;
+        }
+    </style>
+</head>
+<body class="bg-light">
+    
+    <div class="login-form rounded bg-white shadow overflow-hidden">
+        <form action="/register" method="post">
+            <h4 class="bg-dark text-white py-3">ADMIN REGISTER PANEL</h4>
+            <div class="p-4">
+                <div class="mb-3">
+                    <input name="email" required type="email" class="form-control shadow-none text-center" autocomplete="off" placeholder="Admin Email"  aria-required="true">
+                </div>
+                <div class="mb-4">
+                    <input name="password" required type="password" class="form-control shadow-none text-center" autocomplete="off" placeholder="Admin Password" aria-required="true">
+                </div>
+                <button name="login" type="submit" class="btn text-white custom-bg shadow-none">REGISTER</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

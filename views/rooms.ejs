@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Paradise-Rooms</title>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Paradise</title>
+    
+    <%- include('partials/links') %>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/read_more.css">
+</head>
+<body class="roomsbody">
+    
+    
+
+    <div class="container py-4">
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href=""><img id="logo-img" src="images/coollogo_com-32344445.png"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="/"> 🏨 HOME</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="my-5 px-4">
+            <h2 class="fw-bold h-font text-center" style="color: white;">OUR ROOMS</h2>
+            <div class="h-line bg-dark"></div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-lg-3 col-md-12 mb-lg-0 mb-4">
+                <nav class="navbar navbar-expand-lg navbar-light bg-white rounded shadow">
+                    <div class="container-fluid flex-lg-column align-items-stretch">
+                        <h4 class="mt-2">FILTERS</h4>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse flex-column align-items-stretch mt-2" id="navbarNavAltMarkup">
+                            <div class="border bg-light p-3 rounded mb-3">
+                                <h5 class="mb-3" style="font-size :18px;">CHECK AVAILABILITY</h5>
+                                <label class="form-label">Check-in</label>
+                                <input type="date" class="form-control shadow-none mb-3">
+                                <label class="form-label">Check-out</label>
+                                <input type="date" class="form-control shadow-none">
+                            </div>
+                            <div class="border bg-light p-3 rounded mb-3">
+                                <h5 class="mb-3" style="font-size :18px;">FACILITIES</h5>
+                                <div class="mb-2">
+                                    <input type="checkbox" id="f1" class="form-check-input shadow-none mr-2 ">
+                                    <label class="form-label" for="f1">Facility one</label>
+                                </div>
+                                <div class="mb-2">
+                                    <input type="checkbox" id="f2" class="form-check-input shadow-none mr-2 ">
+                                    <label class="form-label" for="f2">Facility two</label>
+                                </div>
+                                <div class="mb-2">
+                                    <input type="checkbox" id="f3" class="form-check-input shadow-none mr-2 ">
+                                    <label class="form-label" for="f3">Facility three</label>
+                                </div>
+                            </div>
+                            <div class="border bg-light p-3 rounded mb-3">
+                                <h5 class="mb-3" style="font-size :18px;">GUESTS</h5>
+                                <div class="d-flex">
+                                    <div class="me-3">
+                                        <label class="form-label">Adults</label>
+                                        <input type="number" class="form-control shadow-none">
+                                    </div>
+                                    <div>
+                                        <label class="form-label">Children</label>
+                                        <input type="number" class="form-control shadow-none">
+                                    </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
+            <div class="col-lg-9 col-md-12 px-4">
+
+                <% posts.forEach(element => { %>
+
+                    <form action="/booknow" method="post">
+
+                        <div class="card mb-3 shadow" style="background-color:white;margin:0; width: 100%; min-height: 30%;">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <img src="<%= element.link %>" class="img-fluid rounded" alt="">
+                                </div>
+
+                                <div class="col-md-5 px-lg-3 px-md-3 px-0">
+                                    <h5 class="mb-3" style="font-family: 'RobotoDraft', 'Roboto', sans-serif;"><%= element.type %></h5>
+                                    <div class="features ms-3 mb-3">
+                                        <h6 class="mb-1">Features</h6>
+                                        <span class="badge rounded-pill bg-light text-dark text-wrap">
+                                            <%- element.bed %> Double Bed
+                                        </span>
+                                        <span class="badge rounded-pill bg-light text-dark text-wrap">
+                                            <%= element.bathroom %> Bathroom
+                                        </span>
+                                        <span class="badge rounded-pill bg-light text-dark text-wrap">
+                                            <%= element.balcony %> Balcony
+                                        </span>
+                                        <span class="badge rounded-pill bg-light text-dark text-wrap">
+                                            <%= element.sofa %> Sofa
+                                        </span>
+                                    </div>
+
+                                    <div class="facilities ms-3 mb-3">
+                                        <h6 class="mb-1">Facilities</h6>
+                                        <span class="badge rounded-pill bg-light text-dark text-wrap">
+                                            Wifi
+                                        </span>
+                                        <span class="badge rounded-pill bg-light text-dark text-wrap">
+                                            Television
+                                        </span>
+                                        <span class="badge rounded-pill bg-light text-dark text-wrap">
+                                            AC
+                                        </span>
+                                        <span class="badge rounded-pill bg-light text-dark text-wrap">
+                                            Room Heater
+                                        </span>
+                                    </div>
+
+                                    <div class="guests ms-3 mb-2">
+                                        <h6 class="mb-1">Guests</h6>
+                                        <span class="badge rounded-pill bg-light text-dark text-wrap">
+                                            <%= element.adult %> Adults
+                                        </span>
+                                        <span class="badge rounded-pill bg-light text-dark text-wrap">
+                                            <%= element.children %> Children
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-2 my-4" style="text-align:center;">
+                                    <h6 class="mb-4"> ₹<%= element.amount %> per Night</h6>
+                                    <a href=""  class="btn btn-md w-100 text-white custom-bg shadow-none mb-2" style="background-color: red;"><button class="custom-bg" name="bookbutton" type="submit" value="<%= element._id%>">Book Now</button></a>
+                                    <a href="#" class="btn btn-sm w-100 btn-outline-dark shadow-none mb-2" type="button" style="background-color:azure;color:black;">More Details</a>
+                                    <input type="number" name="days" class="w-100 rounded m-1 p-1" placeholder="No. of days" required>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+                    
+                    </form>
+                    
+                    <hr class="ruler">
+                
+                <% }) %>
+
+            
+            </div>
+        </div>
+    </div>
+
+
+    <%- include('partials/footer') %>
+
+</body>
+</html>

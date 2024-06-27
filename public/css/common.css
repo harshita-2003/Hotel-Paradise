@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Alkatra:wght@500;600&family=Poppins&family=Rubik&display=swap');
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+.custom-bg{
+    color: white;
+    background-color: rgba(14, 14, 14, 0.841);
+    box-shadow: 2px 3px 4px rgb(216, 216, 216);
+}
+
+/* .custom-alert{
+    position: fixed;
+    top:25px;
+    right:25px;
+} */
+
+#dashboard-bar{
+    position: fixed;
+    height:100%;
+}
+

@@ -1,0 +1,232 @@
+*{
+    box-sizing: border-box;
+    margin: 0%;
+    padding:0%;
+}
+#title{
+    text-align: center; 
+}
+
+.head{
+    background:linear-gradient(rgb(245, 240, 212)  , rgb(247, 203, 203) );
+    padding:1.5rem;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.main_head{
+    color:aliceblue;
+    text-transform: capitalize;
+    font-style: italic;
+    font-size: 3rem;
+    padding:1.5rem 4rem;
+    border-radius: 50px;
+    background-color: lightcoral;
+}
+
+#text{
+    color:aliceblue;
+    font-size: 1.5rem;
+    line-height: 2.4rem;
+    padding:0% 7%;
+    text-align: justify;
+}
+p{
+    color:dimgrey;
+    font-size: 1.3rem;
+}
+.sp{
+    color:#d48f2e;
+}
+.news{
+    font-weight: bolder;
+    font-size: 5em;
+    letter-spacing: 2px;
+}
+#newsletter{
+    padding:2%;
+    text-align: center;
+}
+.hr_nw{
+    margin: 1% auto;
+    color:#077d82;
+    width:18%;
+    border-width:5px;
+    border-style: none;
+    border-top-style: dotted;
+}
+
+h1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin:1%;
+    font-size: 4rem;
+}
+.h1{
+    color:azure;
+    margin:4% 3%;
+}
+.row{
+    margin:3%;
+}
+
+#text{
+    color:aliceblue;
+}
+.col-1{
+    background-color: #c5a880;   
+}
+.col-1,.col-2{
+    border-radius: 20px;
+}
+#hotel_staff_img{
+    padding: 2%;
+    width:90%;
+}
+
+.row::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.footer{
+    margin:2%;
+    color:gray;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.ftco-section {
+    padding: 4em 0;
+    position: relative;
+    width: 100%;
+    overflow-x: hidden;
+    text-align: center;
+}
+.heading-section .subheading {
+    font-size: 13px;
+    display: block;
+    margin-bottom: 5px;
+    color: #c5a880;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+.heading-section h2, .heading-section .h2 {
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 1.4;
+    font-family: "Old Standard TT", Arial, sans-serif;
+}
+.services {
+    width: 100%;
+    background: #fff;
+    padding: 30px 20px;
+    border-radius: 50% 50% 50% 0;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    -webkit-box-shadow: 0px 5px 25px -2px rgba(0, 0, 0, 0.06);
+    -moz-box-shadow: 0px 5px 25px -2px rgba(0, 0, 0, 0.06);
+    box-shadow: 5px 5px 25px -2px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+}
+
+.services:hover{
+    background-color: #c5a880;
+    .icon,.text{
+        color:white;
+    }
+}
+
+.services .icon {
+    margin-bottom: 8px;
+    font-size: 3rem;
+    color: #c5a880;
+}
+.services .text {
+    font-weight: 100;
+    width: 100%;
+    color: #000;
+}
+
+
+.services .text h2, .services .text .h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 2px;
+    font-family: "Nunito", Arial, sans-serif;
+}
+
+
+/* Testimonials */
+
+#testimonials_section{
+	margin:4% 0 9%;
+	text-align: center;
+}
+.test_img{
+	width:80px;
+	border-radius: 80%;
+}
+.test-col{
+    width:29.7%;
+	display: inline-block;
+	padding: 20px;
+	margin:20px 25px;
+	border:1px solid rgb(231, 231, 231);
+	border-radius: 25px;
+    background-position-x: center;
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+    background-image: url(https://www.elegantthemes.com/layouts/wp-content/uploads/2018/08/hosting-company-04.png);
+    box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+}
+
+.test-col:hover{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.test_para{
+	margin:20px 0;
+	text-align: center;
+	color: #666;
+    font-size: 1rem;
+}
+
+
+hr{
+	width:10%;
+	margin:10px auto;
+    border-width:5px;
+    border-style:none;
+    border-top-style:dotted;
+    border-color:#ff8f00;
+}
+
+.custom-bg{
+    border: red;
+    color: white;
+    background-color: red;
+}
+
+
+@media screen and (max-width:768px){
+    .col-1{
+        width:100%;
+    }
+    .col-2{
+        width:100%;
+        margin-top: 2%;
+    }
+    .news{
+        font-size:3rem;
+    }
+    .test-col{
+        width:100%;
+    }
+}

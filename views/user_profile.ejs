@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <%- include('user/link') %>
+    <link rel="stylesheet" href="user_form.css">
+</head>
+<body>
+    <div class=" bg-dark text-light p-3 d-flex align-items-center justify-content-between sticky-top">
+        <h3 class="mb-0">Hotel Paradise</h3>
+        <h4>Welcome <%= name %> 😊</h4>
+        <a href="/" class="btn btn-light btn-sm">HOME</a>
+        <a href="/userlogout" class="btn btn-light btn-sm">LOG OUT</a>
+        
+    </div>
+    <div>
+        <h2 class="text-center mt-3"><b>Your Bookings</b></h2>
+    </div>
+        <% if (bookings && bookings.length > 0) { %>
+            <% bookings.forEach(booking => { %>
+                <div style="display: flex; justify-content: center;">
+                    <div class="col-lg-8 col-md-12 px-4">
+                        <div class="card mb-3 shadow p-3" style="background-color:white; margin:0; width: 100%; min-height: 30%;">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <img src="<%= booking.roomId.link %>" class="img-fluid rounded" alt="">
+                                </div>
+                                <div class="col-md-5 px-lg-3 px-md-3 px-0">
+                                    <h5 class="mb-3" style="font-family: 'RobotoDraft', 'Roboto', sans-serif;"><%= booking.roomId.type %></h5>
+                                    <div class="features ms-3 mb-3">
+                                        <h6 class="mb-1">Features</h6>
+                                        <span class="badge rounded-pill bg-light text-dark text-wrap">
+                                            <%= booking.roomId.bed %> Double Bed
+                                        </span>
+                                        <span class="badge rounded-pill bg-light text-dark text-wrap">
+                                            <%= booking.roomId.bathroom %> Bathroom
+                                        </span>
+                                        <span class="badge rounded-pill bg-light text-dark text-wrap">
+                                            <%= booking.roomId.balcony %> Balcony
+                                        </span>
+                                        <span class="badge rounded-pill bg-light text-dark text-wrap">
+                                            <%= booking.roomId.sofa %> Sofa
+                                        </span>
+                                    </div>
+                                    <!-- Room details here -->
+                                    <div class="ms-3 mb-2">
+                                        <a href="#" class="btn btn-sm w-100 btn-outline-dark shadow-none" style="background-color:azure; color:black;">₹<%= booking.roomId.amount %> per night</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="ruler">
+                    </div>
+                    <h2>Total payable amount: ₹<%= booking.totalAmount %></h2>
+                </div>
+            <% }) %>
+            <div class="text-center d-flex justify-content-center">
+                <a class="btn btn-primary btn-lg m-1">Pay Now</a>
+                <a href="/" class="btn btn-primary btn-lg m-1">Home</a>
+            </div>
+            
+        <% } else { %>
+            <p>No bookings found.</p>
+        <% } %>
+        
+    
+</body>
+</html>
